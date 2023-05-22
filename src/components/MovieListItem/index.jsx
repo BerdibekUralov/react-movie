@@ -1,12 +1,12 @@
 import React from 'react'
 
-export const MovieListItem = () => {
+export const MovieListItem = ({name, viewers, favourite, like}) => {
   return (
-    <li className={`list-group-item d-flex justify-content-between`}>
-    <span o className='list-group-item-label' data-toggle='like'>
-      Game of Throne
+    <li className={`list-group-item d-flex justify-content-between ${favourite && 'favourite'} ${like && 'like'}`}>
+    <span className='list-group-item-label' data-toggle='like'>
+      {name}
     </span>
-    <input type='number' className='list-group-item-input' defaultValue='000' />
+    <input type='number' className='list-group-item-input' defaultValue={viewers} />
     <div className='d-flex justify-content-center align-items-center'>
       <button type='button' className='btn-cookie btn-sm' data-toggle='favourite'>
         <i className='fas fa-cookie'></i>
